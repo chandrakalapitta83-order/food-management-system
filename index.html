@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍎 Food Management System</h1>
+
+           <div class="add-food">
+        <h2>Add Food Item</h2>
+        <input type="text" id="foodName" placeholder="Food name e.g. Milk">
+        <input type="number" id="quantity" placeholder="Quantity" min="1" value="1">
+        <select id="category">
+            <option value="Dairy">🥛 Dairy</option>
+            <option value="Veg">🥦 Veg</option>
+            <option value="Meat">🍗 Meat</option>
+            <option value="Fruit">🍎 Fruit</option>
+            <option value="Other">📦 Other</option>
+        </select>
+        <input type="date" id="expiryDate">
+        <button onclick="addFood()">Add Food</button>
+    </div>
+        <input type="text" id="searchBox" placeholder="🔍 Search food..." onkeyup="searchFood()" style="width:100%; margin:15px 0; padding:10px; border:1px solid #ddd; border-radius:5px;">
+        <div class="filters">
+            <button onclick="filterFood('all')" class="active">All</button>
+            <button onclick="filterFood('fresh')">Fresh</button>
+            <button onclick="filterFood('expiring')">Expiring Soon</button>
+            <button onclick="filterFood('expired')">Expired</button>
+        </div>
+
+        <div class="stats">
+            <span>Total: <b id="totalCount">0</b></span>
+            <span>Expiring: <b id="expiringCount">0</b></span>
+            <span>Expired: <b id="expiredCount">0</b></span>
+        </div>
+
+        <div id="foodList" class="food-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
